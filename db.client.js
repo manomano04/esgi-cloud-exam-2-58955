@@ -3,12 +3,8 @@ require('dotenv').config()
 
 // database
 const sequelize = new Sequelize(
-  'postgres://fakeurl', // TODO
-  process.env.DB_NAME,
-  process.env.DB_USER, 
-  process.env.DB_PASSWORD, 
+  process.env.DB_URL,
   {
-    host: process.env.DB_HOST,
     dialectOptions: {
       ssl: {
         require: true,
